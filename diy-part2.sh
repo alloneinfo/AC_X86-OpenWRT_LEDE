@@ -50,5 +50,5 @@ sed -i "s/route 'openwrt.org'/route '119.29.29.29'/g" ./feeds/luci/modules/luci-
 # 替换 Syncthing 并更新版本
 # rm -rf ./feeds/packages/utils/syncthing
 # svn co https://github.com/alloneinfo/openwrt_feeds/trunk/syncthing ./feeds/packages/utils/syncthing
-sed -i '/PKG_HASH:=/{s/.*/PKG_HASH:=skip/g}' ./feeds/packages/utils/syncthing/Makefile
-sed -i "s/PKG_VERSION:=.*/PKG_VERSION:=$(getversion syncthing/syncthing)/g" ./feeds/packages/utils/syncthing/Makefile
+# sed -i '/PKG_HASH:=/{s/.*/PKG_HASH:=skip/g}' ./feeds/packages/utils/syncthing/Makefile
+# sed -i "s/PKG_VERSION:=.*/PKG_VERSION:=$(getversion syncthing/syncthing)/g" ./feeds/packages/utils/syncthing/Makefile
