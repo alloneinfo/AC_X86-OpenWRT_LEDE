@@ -47,6 +47,10 @@ sed -i "s/dns 'openwrt.org'/dns 'www.jobcn.com'/g" ./feeds/luci/modules/luci-bas
 sed -i "s/ping 'openwrt.org'/ping '119.29.29.29'/g" ./feeds/luci/modules/luci-base/root/etc/config/luci
 sed -i "s/route 'openwrt.org'/route '119.29.29.29'/g" ./feeds/luci/modules/luci-base/root/etc/config/luci
 
+# 修正ssr ping 检测保留小数位
+sed -i "s/time=[0-9]*/time=[0-9.]*/g" ./feeds/helloword/luci-app-ssr-plus/luasrc/controller/shadowsocksr.lua
+
+
 # 替换 Syncthing 并更新版本
 # rm -rf ./feeds/packages/utils/syncthing
 # svn co https://github.com/alloneinfo/openwrt_feeds/trunk/syncthing ./feeds/packages/utils/syncthing
