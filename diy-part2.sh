@@ -28,19 +28,20 @@ sed -i "s/%D %V, %C.*/%D %V, %C Mod By Kanny/g" ./package/base-files/files/etc/b
 # 替换 luci-theme-argon
 # rm -rf ./package/lean/luci-theme-argon
 # git clone https://github.com/jerrykuku/luci-theme-argon -b 18.06 ./package/lean/luci-theme-argon
-rm -rf ./feeds/luci/themes/luci-theme-argon
-git clone --depth 1 https://github.com/jerrykuku/luci-theme-argon -b 18.06 ./feeds/luci/themes/luci-theme-argon
-rm -rf ./feeds/luci/themes/luci-theme-argon/.git
-rm -rf ./feeds/luci/themes/luci-theme-argon/Screenshots
-rm -f ./feeds/luci/themes/luci-theme-argon/.gitattributes
-rm -f ./feeds/luci/themes/luci-theme-argon/.gitignore
-rm -f ./feeds/luci/themes/luci-theme-argon/*.md
+
+#rm -rf ./feeds/luci/themes/luci-theme-argon
+#git clone --depth 1 https://github.com/jerrykuku/luci-theme-argon -b 18.06 ./feeds/luci/themes/luci-theme-argon
+#rm -rf ./feeds/luci/themes/luci-theme-argon/.git
+#rm -rf ./feeds/luci/themes/luci-theme-argon/Screenshots
+#rm -f ./feeds/luci/themes/luci-theme-argon/.gitattributes
+#rm -f ./feeds/luci/themes/luci-theme-argon/.gitignore
+#rm -f ./feeds/luci/themes/luci-theme-argon/*.md
 
 
 # 修改默认主题为 luci-theme-argon
-sed -i '/uci set luci.main.mediaurlbase/d' ./package/lean/default-settings/files/zzz-default-settings
-sed -i '/uci set luci.main.lang=zh_cn/a\uci set luci.main.mediaurlbase=\/luci-static\/argon\/' ./package/lean/default-settings/files/zzz-default-settings
-sed -i "s/option mediaurlbase.*/option mediaurlbase '\/luci-static\/argon'/g" ./feeds/luci/modules/luci-base/root/etc/config/luci
+#sed -i '/uci set luci.main.mediaurlbase/d' ./package/lean/default-settings/files/zzz-default-settings
+#sed -i '/uci set luci.main.lang=zh_cn/a\uci set luci.main.mediaurlbase=\/luci-static\/argon\/' ./package/lean/default-settings/files/zzz-default-settings
+#sed -i "s/option mediaurlbase.*/option mediaurlbase '\/luci-static\/argon'/g" ./feeds/luci/modules/luci-base/root/etc/config/luci
 
 # 修改测试
 sed -i "s/dns 'openwrt.org'/dns 'www.jobcn.com'/g" ./feeds/luci/modules/luci-base/root/etc/config/luci
@@ -48,7 +49,7 @@ sed -i "s/ping 'openwrt.org'/ping '119.29.29.29'/g" ./feeds/luci/modules/luci-ba
 sed -i "s/route 'openwrt.org'/route '119.29.29.29'/g" ./feeds/luci/modules/luci-base/root/etc/config/luci
 
 # 修正ssr ping 检测保留小数位
-sed -i "s/time=[0-9]*/time=[0-9.]*/g" ./feeds/helloword/luci-app-ssr-plus/luasrc/controller/shadowsocksr.lua
+#sed -i "s/time=[0-9]*/time=[0-9.]*/g" ./feeds/helloword/luci-app-ssr-plus/luasrc/controller/shadowsocksr.lua
 
 
 # 替换 Syncthing 并更新版本
